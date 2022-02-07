@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+	  <title>Таблицы</title>
+	  <meta name="description" lang="ru" content="Конспект по верстке от 2022 года">
+	  <link rel="stylesheet" type="text/css" href="../css/style.css">
+	  <meta name="robots" content="noindex, nofollow">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <header><h1>Таблицы</h1></header>
+	  <nav class="krohi"><a href="/">Вернуться на главную</a></nav>
+      <section>
+	     <div class="prev">
+		    <h2>HTML теги формирования таблиц</h2>
+			<div>
+			<ul>
+			   <li>table - Элемент для создания таблицы</li>
+			   <li>thead - Определяет заголовок таблицы</li>
+			   <li>tfoot - Определяет нижний колонтитул таблицы</li>
+			   <li>tbody - Определяет тело таблицы</li>
+			   <li>caption - Добавляет подпись к таблице</li>
+			   <li>col - Выбирает для форматирования один или несколько столбцов таблицы, не содержащих информацию одного типа</li>
+			   <li>colgroup - Предназначен для задания ширины и стиля одной или нескольких колонок таблицы</li>
+			   <li>tr - Создает строку таблицы</li>
+			   <li>th - Создает заголовок ячейки таблицы</li>
+			   <li>td - Создает ячейку таблицы</li>
+			</ul>
+			</div>
+		 </div>
+		 <div class="box">
+		 <div class="primer one">
+		    <h2>Минимальный набор table, tr, td</h2>
+			<p>Данный набор тегов минимально-достаточен для формирования представления таблицы</p>
+			<p>Тег table - создает саму таблицу, тег tr - строки, тег td - ячейки строки. Атрибуты colspan и rowspan, позволяют объединять несколько горизонтальных и вертикальных ячеек.</p>
+			<h3>Код:</h3>
+			<pre>
+&lt;table>
+   &lt;tr>
+      &lt;td>Жизнь&lt;/td>
+      &lt;td>Смерд&lt;/td>
+      &lt;td>Винигрет&lt;/td>
+   &lt;/tr>
+   &lt;tr>
+      &lt;td>Писатель&lt;/td>
+      &lt;td>Поёт&lt;/td>
+      &lt;td>Йод&lt;/td>
+   &lt;/tr>
+   &lt;tr>
+      &lt;td>Краса&lt;/td>
+      &lt;td>Коса&lt;/td>
+      &lt;td>Колбаса&lt;/td>
+   &lt;/tr>
+&lt;/table>
+			</pre>
+			<h3>Результат:</h3>
+		    <table>
+			  <tr><td>Жизнь</td><td>Смерд</td><td>Винигрет</td></tr>
+			  <tr><td>Писатель</td><td>Поёт</td><td>Йод</td></tr>
+			  <tr><td>Краса</td><td>Коса</td><td>Колбаса</td></tr>
+			</table>
+		 </div>
+		 <div class="primer two">
+		    <h2>Таблицы с заголовками th, caption</h2>
+			<p>Тег caption, обязан следовать непосредтсвенно за table и представляет собой заголовок всей таблицы</p>
+			<p>Тег th представляет собой заголовок ячейки таблицы, используется для форматирования отличающего его от обычных ячеек. По умолчанию имеет жирный шрифт и центрирование</p>
+			<h3>Код:</h3>
+			<pre>
+&lt;table>
+   &lt;caption>Таблица в лицах&lt;/caption>
+   &lt;tr>
+      &lt;th>Год&lt;/th>
+      &lt;th>Событие&lt;/th>
+      &lt;th>Убытие&lt;/th>
+   &lt;/tr>
+   &lt;tr>
+      &lt;td>1931&lt;/td>
+      &lt;td>Сталин кушает&lt;/td>
+      &lt;td>Один&lt;/td>
+   &lt;/tr>
+   &lt;tr>
+      &lt;td>1954&lt;/td>
+      &lt;td>У слоненка уши&lt;/td>
+      &lt;td>Шире&lt;/td>
+   &lt;/tr>
+&lt;/table>
+			</pre>
+			<h3>Результат:</h3>
+		    <table>
+			  <caption>Таблица в лицах</caption>
+			  <tr><th>Год</th><th>Событие</th><th>Убытие</th></tr>
+			  <tr><td>1931</td><td>Сталин кушает</td><td>Один</td></tr>
+			  <tr><td>1954</td><td>У слоненка уши</td><td>Шире</td></tr>
+			</table>
+		 </div>
+		 <div class="primer free">
+		    <h2>Теги thead, tbody, tfoot</h2>
+			<p>Элементы предназначены для содержания одной или несколькоих строк в верху, середине и в низу таблицы</p>
+			<h3>Код:</h3>
+			<pre>
+&lt;table>
+   &lt;caption>Меню&lt;/caption>
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Блюдо&lt;/th>
+         &lt;th>Грамм&lt;/th>
+         &lt;th>Ценность&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tfoot>
+      &lt;tr>
+         &lt;th colspan="3">А вообще жрать вредно&lt;/th>
+      &lt;/tr>
+   &lt;/tfoot>
+   &lt;tbody>
+      &lt;tr>
+         &lt;td>Еда
+         &lt;/td>
+         &lt;td>500
+         &lt;/td>
+         &lt;td>Ценно&lt;/td>
+      &lt;/tr>
+      &lt;tr>
+         &lt;td>Вода&lt;/td>
+         &lt;td>200&lt;/td>
+         &lt;td>Бесценно&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+			</pre>
+			<h3>Результат:</h3>
+		    <table>
+			  <caption>Меню</caption>
+			  <thead>
+			     <tr><th>Блюдо</th><th>Грамм</th><th>Ценность</th></tr>
+			  </thead>
+			  <tfoot>
+			     <tr><th colspan="3">А вообще жрать вредно</th></tr>
+			  </tfoot>
+			  <tbody>
+			     <tr><td>Еда</td><td>500</td><td>Ценно</td></tr>
+			     <tr><td>Вода</td><td>200</td><td>Бесценно</td></tr>
+			  </tbody>
+			</table>
+		 </div>
+		 <div class="primer foo">
+		    <h2>Группировка colgroup, col</h2>
+			<p>Тег col задает группу колонок к которым необходимо применить стили</p>
+			<p>Тег colgroup позволяет объединять колонки в определенные группы. Также при добавлении атрибута rules="groups" к тегу table браузер будет рисовать линию только между колонками, созданными с помощью colgroup</p>
+		 	<p>Атрибут span для обоих тегов указывает количество колонок в группе</p>
+			<h3>Код:</h3>
+			<pre>
+&lt;table rules="groups">
+   &lt;colgroup span="3">
+      &lt;col span="1" 
+         style="background: #9b3ee3;">
+      &lt;col span="2" 
+         style="background: #ac65e3;">
+   &lt;/colgroup>
+   &lt;tr>
+      &lt;td>Золото&lt;/td>
+      &lt;td>100&lt;/td>
+      &lt;td>раствор&lt;/td>
+   &lt;/tr>
+   &lt;tr>
+      &lt;td>Ртуть&lt;/td>
+      &lt;td>500&lt;/td>
+      &lt;td>гранулы&lt;/td>
+   &lt;/tr>
+   &lt;tr>
+      &lt;td>Свинец&lt;/td>
+      &lt;td>200&lt;/td>
+      &lt;td>кристаллы
+      &lt;/td>
+   &lt;/tr>
+&lt;/table>
+			</pre>
+			<h3>Результат:</h3>
+			<table rules="groups">
+			   <colgroup span="3">
+			      <col span="1" style="background: #9b3ee3;">
+				  <col span="2" style="background: #ac65e3;">
+			   </colgroup>
+			     <tr><td>Золото</td><td>100</td><td>раствор</td></tr>
+			     <tr><td>Ртуть</td><td>500</td><td>гранулы</td></tr>
+			     <tr><td>Свинец</td><td>200</td><td>кристаллы</td></tr>
+			</table>
+		 </div>
+		 </div>
+      </section>
+   </body>
+</html>
